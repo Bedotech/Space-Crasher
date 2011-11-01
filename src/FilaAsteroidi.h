@@ -5,8 +5,8 @@
 
 class FilaAsteroidi {
     private:
-        int _densita_fila;
-        int _length;
+        unsigned int _densita_fila;
+        unsigned int _length;
         
     public:
         int vel; //Velocità della fila.        
@@ -16,7 +16,8 @@ class FilaAsteroidi {
         
         std::vector<Asteroide> asteroidi; // Tutti gli asteroidi appartenenti alla fila.
         
-        FilaAsteroidi(int velocita, int densita_fila, int length);
+        FilaAsteroidi(int velocita, unsigned int densita_fila, int length);
+		~FilaAsteroidi();
         void show(SDL_Surface* screen);
         void move();
         
@@ -29,7 +30,7 @@ class FilaAsteroidi {
 
 
 
-FilaAsteroidi::FilaAsteroidi(int velocita, int densita_fila, int length) {            
+FilaAsteroidi::FilaAsteroidi(int velocita, unsigned int densita_fila, int length) {            
             //Impostazione offest.
             Y = 0;
             //Imposta la velocità.
@@ -37,17 +38,22 @@ FilaAsteroidi::FilaAsteroidi(int velocita, int densita_fila, int length) {
             //Lunghezza fila.
             _length = length/25;           
             //Regola gli elementi per fila.
-            if(densita_fila  < 0 || densita_fila > _length) _densita_fila = 10;
-            else _densita_fila = densita_fila;
+            if( densita_fila  < 0 || densita_fila > _length ) {
+				_densita_fila = 10;
+			}
+            else {
+				_densita_fila = densita_fila;
+			}
             
-            int i, x;
+            unsigned int i, x;
             //Crea un vettore  di 25 elementi che tiene conto delle diverse posizioni 
             //già occupate dai meteoriti.
             std::vector<int> posizione(_length, 0);
             for(i = 0; i< _length; i++) posizione[i] = i;
             //Finche non riempie l'array continua a inserire oggetti.
+			i = 0;
             while(asteroidi.size() < _densita_fila) {
-                
+                i++;
                 //Assegna all'asteroide la coordinata X in base al valore contenuto in 'posizione'.
                 x = rand()%posizione.size();
                 Asteroide A(posizione[x]);
@@ -58,7 +64,15 @@ FilaAsteroidi::FilaAsteroidi(int velocita, int densita_fila, int length) {
                 asteroidi.push_back(A);            
             }
                       
-}  
+} 
+
+FilaAsteroidi::~FilaAsteroidi () {
+	/*unsigned int i;
+
+	for(i=0; i< _densita_fila; i++) {
+		delete &asteroidi[i];
+	}*/
+}
 
 void FilaAsteroidi::add(Asteroide A) {
     int i = 0; 
@@ -80,7 +94,7 @@ void FilaAsteroidi::move() {
     //Muove l'asteroide verso il basso di un pixel;
     Y += vel;
     
-    int i; 
+    unsigned int i; 
     
     for(i=0; i<_densita_fila; i++)
     {       
@@ -90,20 +104,20 @@ void FilaAsteroidi::move() {
 
 void FilaAsteroidi::show( SDL_Surface *screen ) {
     //Mostra tutti gli asteroidi.
-    int i;    
+    unsigned int i;    
             
     for(i=0; i<_densita_fila; i++)         
         asteroidi[i].show(screen);  
 }
 //Trova Collisioni.
 bool FilaAsteroidi::checkCollision(SDL_Rect obj) { 
-     int i;
+     unsigned int i;
      bool collision = false;
      //Per ogni asteroide controlla se vi è collisione.
      for(i = 0; i<asteroidi.size(); i++)  {
-            Asteroide A= asteroidi[i];
+           Asteroide A = asteroidi[i];
            collision = (obj.x == A.pos.x);
-           if(collision) break;
+           if( collision ) break;
      }
      
      return collision;

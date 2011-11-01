@@ -35,13 +35,11 @@
                 
                 SDL_WM_SetCaption ("Space Crash", NULL);
                 
-                
-                
-                nave = new Navicella(screen);
-                pioggia = new PioggiaAsteroidi(width, height);
                 player = new Player(screen);  
-                
-                player->getName(screen);                  
+                player->getName(screen);  
+
+                nave = new Navicella(screen);             
+				pioggia = new PioggiaAsteroidi(width, height);                     
             }
             
             //Ciclo principale di loop;
@@ -90,7 +88,7 @@
                         /*Imposta il livello della prossima ondata.*/                        
                         pioggia->levelUp(player->getPoint());
                         /*Aumenta il punteggio se sono usciti asteroidi.*/
-                        player->addPoint(pioggia->move()); 
+                        player->addPoint( pioggia->move() ); 
                         /* Disegna tutto.*/         
                         draw ();
                     }
@@ -112,7 +110,7 @@
                 //L'interfaccia del giocatore.               
                 player->draw();
                 //La pioggia di meteoriti.                
-                pioggia->draw(screen);         
+                pioggia->draw( screen );         
                 
                 /* Don't run too fast */
                 SDL_Delay (1);

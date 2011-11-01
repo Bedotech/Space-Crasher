@@ -5,10 +5,10 @@
 #include <ctime>
 
 
-/*Questa classe funziona come un time, può essere stoppata e startata per far proseguire
+/*Questa classe funziona come un timer, può essere stoppata e startata per far proseguire
   il flusso o meno degli asteroidi.
   Ha tre parametri:
-        - _velocitaocità, la _velocitaocità degli asteroidi.
+        - _velocità, la _velocità degli asteroidi.
         - Densita, quanti asteroidi per linea.
         - Frequenza, la frequenza con cui vengono creati asteroidi.*/
 class PioggiaAsteroidi {
@@ -78,7 +78,7 @@ PioggiaAsteroidi::PioggiaAsteroidi(int length, int height) {
             paused = false;
             started = false;
             //Inizializzazione procedura random.
-            srand( time(0));
+            srand( (unsigned int)time(0));
             //L'inferno non si può realizzare subito!
             can_make_hell = false;
             
@@ -92,14 +92,15 @@ int PioggiaAsteroidi::move() {
     if(get_ticks() > _velocita) {
         stop();
         
-        int i;
+        unsigned int i;
         //Muove ogni fila di asteroidi. 
         for(i=0; i<asteroidi.size(); i++) {
             asteroidi[i].move();
-            //Se l'asteroide a sorpassato lo schermo noi lo eliminiamo.
+            //Se l'asteroide ha sorpassato lo schermo noi lo eliminiamo.
             //Ed aumentiamo il punteggio per ogni asteroide passato.
             if(asteroidi[i].Y >= _height) {
                 point += asteroidi[i].asteroidi.size();
+				
                 asteroidi.erase(asteroidi.begin()+i);                    
             }         
         }
@@ -126,7 +127,7 @@ int PioggiaAsteroidi::move() {
 }
 
 void PioggiaAsteroidi::draw(SDL_Surface *screen) {    
-    int i;
+    unsigned int i;
     
     for(i=0; i<asteroidi.size(); i++) {
             asteroidi[i].show(screen);
@@ -219,7 +220,7 @@ bool PioggiaAsteroidi::is_paused()
 
 //Trova Collisioni.
 bool PioggiaAsteroidi::checkCollision(SDL_Rect obj) { 
-     int i;
+     unsigned int i;
      bool collision = false;
      //Per ogni asteroide controlla se vi è collisione.
      for(i = 0; i<asteroidi.size(); i++)  {
@@ -233,10 +234,11 @@ bool PioggiaAsteroidi::checkCollision(SDL_Rect obj) {
 void PioggiaAsteroidi::levelUp(int point) {
     //point *=10;
     if(point <= 100) {
-        _velocita = 25;
-        _velocita_per_pixel = 2;
-        _densita = 5;
-        _frequenza = 80;
+		_velocita = 12;
+        _velocita_per_pixel = 5;
+        _densita = 8;
+        _frequenza = 63;
+        can_make_hell = true;
     }
     else if(point <= 250) {
         _velocita = 20;

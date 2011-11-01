@@ -27,7 +27,7 @@ class Explosion {
                 SDL_Surface *img;
                 //Nome del file.
                 char file[30];
-                sprintf(file,"./img/explosion/000%d.bmp",i);
+                sprintf_s(file,"./img/explosion/000%d.bmp",i);
                 //Caricamento del file.
                 img = IMG_Load( file );
                 SDL_SetColorKey( img, SDL_SRCCOLORKEY, SDL_MapRGB( img->format, 255, 255, 255)); 
@@ -41,6 +41,15 @@ class Explosion {
             _done = false;
         }
         
+		~Explosion() {
+			unsigned int i;
+
+			for(i=0; i<7; i++) {
+				if( frame[i] != NULL ) {
+					SDL_FreeSurface( frame[i] );
+				}
+			}
+		}
         void draw(SDL_Rect *offset) {    
             if(_done) return;
             //Se è passato tot tempo lo disegna altrimenti niente.

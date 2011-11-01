@@ -1,6 +1,6 @@
 //Questa classe rappresenta del testo che può e deve essere renderizzato.
-#include "SDL/SDL.h"
-#include "SDL/SDL_ttf.h"
+#include <SDL/SDL.h>
+#include <SDL/SDL_ttf.h>
 #include <string>
 
 #define FONT "./font/infected.ttf"
@@ -39,10 +39,16 @@ class Testo {
             //Intialize default font
             _font = TTF_OpenFont( font_path.c_str(), 38 );               
         }
+
+		~Testo() {
+			if( _surface != NULL ) {
+				SDL_FreeSurface( _surface );	
+			}
+		}
         //Lettura  e scrittura testo.
         std::string get_text() { return _text; }
         //Reimposta anche il render.
-        void set_text (std::string text) { 
+        void set_text ( std::string text ) { 
             //Renderizza il testo.
             _text = text; 
             _surface = TTF_RenderText_Solid( _font, _text.c_str(), _textColor); 

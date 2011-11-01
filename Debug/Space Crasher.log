@@ -1,20 +1,10 @@
-﻿Compilazione avviata 11/1/2011 3:27:00 PM.
+﻿Compilazione avviata 11/1/2011 10:46:08 PM.
      1>Progetto "C:\Documents and Settings\Cronos\Documenti\Progetti\Space Crasher\VS project\Space Crasher\Space Crasher.vcxproj" sul nodo 2 (destinazioni: build).
      1>InitializeBuildStatus:
          Creazione di "Debug\Space Crasher.unsuccessfulbuild". È stato specificato "AlwaysCreate".
        ClCompile:
          d:\Programmi\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt src\main.c
          main.c
-     1>c:\documents and settings\cronos\documenti\progetti\space crasher\vs project\space crasher\src\filaasteroidi.h(49): warning C4018: '<': errata corrispondenza tra signed e unsigned
-     1>c:\documents and settings\cronos\documenti\progetti\space crasher\vs project\space crasher\src\filaasteroidi.h(103): warning C4018: '<': errata corrispondenza tra signed e unsigned
-     1>c:\documents and settings\cronos\documenti\progetti\space crasher\vs project\space crasher\src\pioggiaasteroidi.h(81): warning C4244: 'argomento': conversione da 'time_t' a 'unsigned int'. Possibile perdita di dati.
-     1>c:\documents and settings\cronos\documenti\progetti\space crasher\vs project\space crasher\src\pioggiaasteroidi.h(97): warning C4018: '<': errata corrispondenza tra signed e unsigned
-     1>c:\documents and settings\cronos\documenti\progetti\space crasher\vs project\space crasher\src\pioggiaasteroidi.h(131): warning C4018: '<': errata corrispondenza tra signed e unsigned
-     1>c:\documents and settings\cronos\documenti\progetti\space crasher\vs project\space crasher\src\pioggiaasteroidi.h(225): warning C4018: '<': errata corrispondenza tra signed e unsigned
-     1>c:\documents and settings\cronos\documenti\progetti\space crasher\vs project\space crasher\src\explosion.h(30): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\programmi\microsoft visual studio 10.0\vc\include\stdio.h(371): vedere la dichiarazione di 'sprintf'
-     1>c:\documents and settings\cronos\documenti\progetti\space crasher\vs project\space crasher\src\player.h(162): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 d:\programmi\microsoft visual studio 10.0\vc\include\stdio.h(371): vedere la dichiarazione di 'sprintf'
        ResourceCompile:
          Tutti gli output sono aggiornati.
        ManifestResourceCompile:
@@ -36,4 +26,4 @@
 
 Compilazione completata.
 
-Tempo trascorso 00:00:01.06
+Tempo trascorso 00:00:01.12

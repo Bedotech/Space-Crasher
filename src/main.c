@@ -23,6 +23,7 @@ int main (int argc, char *argv[])
     GameEngine game;
     game.main_loop();
     
+	SDL_Quit();
     return 0;
 }
 

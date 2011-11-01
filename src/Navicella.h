@@ -16,7 +16,7 @@ class Navicella {
         SDL_Surface *navicella;
         
         Navicella(SDL_Surface *screen);
-        
+        ~Navicella();
         void handle_input(SDL_Event);
         void draw();
         bool dedectCollision(SDL_Rect obj);               
@@ -34,6 +34,11 @@ Navicella::Navicella(SDL_Surface *screen) {
             SDL_SetColorKey( navicella, SDL_SRCCOLORKEY, SDL_MapRGB( navicella->format, 0xFF, 0, 0xFF )); 
 }   
 
+Navicella::~Navicella() {
+	if( navicella != NULL ) {
+		SDL_FreeSurface( navicella );
+	}
+}
 void Navicella::handle_input(SDL_Event event) {
             //Fai qualcosa per la navicella.
             if( event.type == SDL_KEYDOWN )

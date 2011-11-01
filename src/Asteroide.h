@@ -3,8 +3,10 @@
 
 #define ASTEROIDE_FILE "./img/asteroide.bmp"
 
+SDL_Surface *AsteroidSurface = NULL;
+
 class Asteroide {
-    public:
+	public:
         int vel; //Velocità dell'asteroide        
         
         SDL_Rect pos; //Posizione.     
@@ -12,7 +14,10 @@ class Asteroide {
         
         //Asteroide();
         Asteroide(int x);
-        void show(SDL_Surface* screen);        
+		~Asteroide();
+		Asteroide(const Asteroide&);
+        void show( SDL_Surface* screen );   
+		void Error() {}
               
 };
 
@@ -25,10 +30,30 @@ Asteroide::Asteroide(int x) {
             pos.h = 25;
              
             vel = 5;           
-            //Impostazione immagine asteroide.
-            asteroide = IMG_Load( ASTEROIDE_FILE );
-            SDL_SetColorKey( asteroide, SDL_SRCCOLORKEY, SDL_MapRGB( asteroide->format, 0xFF, 0, 0xFF )); 
+            /*Impostazione immagine asteroide.
+			if( AsteroidSurface == NULL ) {
+				AsteroidSurface = IMG_Load( ASTEROIDE_FILE );
+				SDL_SetColorKey( AsteroidSurface, SDL_SRCCOLORKEY, SDL_MapRGB( AsteroidSurface->format, 0xFF, 0, 0xFF ));			
+			}*/
+			SDL_Surface *tmp = IMG_Load( ASTEROIDE_FILE );
+			SDL_SetColorKey( tmp, SDL_SRCCOLORKEY, SDL_MapRGB( tmp->format, 0xFF, 0, 0xFF ));
+
+			asteroide = SDL_DisplayFormat( tmp );
+			//SDL_FreeSurface( tmp );          
 } 
+//Distruttore della classe.
+Asteroide::~Asteroide() {
+	//Causa crash!
+	if( asteroide != NULL ) {
+		SDL_FreeSurface( asteroide );
+	}
+}
+
+Asteroide::Asteroide( const Asteroide &a ) {
+	pos = a.pos;
+	//Copy image
+	asteroide = SDL_DisplayFormat( a.asteroide );
+}
 
 void Asteroide::show( SDL_Surface *screen ) {
     //Holds offsets
@@ -38,7 +63,7 @@ void Asteroide::show( SDL_Surface *screen ) {
     offset.x *= 25;    
 
     //Blit
-    SDL_BlitSurface( asteroide, NULL, screen, &offset );
+    SDL_BlitSurface( AsteroidSurface, NULL, screen, &offset );
 }      
 
 

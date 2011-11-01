@@ -1,5 +1,5 @@
-#include "SDL/SDL.h"
-#include "SDL/SDL_ttf.h"
+#include <SDL/SDL.h>
+#include <SDL/SDL_ttf.h>
 #include <string>
 #include "Testo.h"
 
@@ -41,7 +41,7 @@ class Player {
                               
              }
              
-             void getName(SDL_Surface *screen) {
+             void getName( SDL_Surface *screen ) {
                 bool done = false;               
                  
                 SDL_EnableUNICODE( SDL_ENABLE ); 
@@ -141,8 +141,9 @@ class Player {
                     SDL_Delay (1);
                 }               
                 //Fine secondo while che continua finche non finisce.
-                _nome->set_text(name);
-                SDL_FreeSurface(message); 
+                _nome->set_text( name );
+                SDL_FreeSurface( message ); 
+				SDL_FreeSurface( s_name ); 
                 SDL_EnableUNICODE( SDL_DISABLE );  
              }
              //Disegna tutta l'interfaccia.
@@ -159,7 +160,7 @@ class Player {
                     _point += point;
                     //Riempie la stringa dei punti aggiornandola.
                     char x[10];
-                    sprintf(x,"Point %d",_point);
+                    sprintf_s(x,"Point %d",_point);
                     _punteggio->set_text(x);
              }
              //Ritorna il valore dei punti correnti.

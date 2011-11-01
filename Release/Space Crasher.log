@@ -1,0 +1,13 @@
+﻿Compilazione avviata 11/1/2011 9:23:52 PM.
+     1>Progetto "C:\Documents and Settings\Cronos\Documenti\Progetti\Space Crasher\VS project\Space Crasher\Space Crasher.vcxproj" sul nodo 2 (destinazioni: build).
+     1>InitializeBuildStatus:
+         Creazione di "Release\Space Crasher.unsuccessfulbuild". È stato specificato "AlwaysCreate".
+       ClCompile:
+         d:\Programmi\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gz /TP /analyze- /errorReport:prompt src\main.c
+         main.c
+     1>src\main.c(1): fatal error C1083: Impossibile aprire il file inclusione 'SDL/SDL.h': No such file or directory
+     1>Compilazione progetto "C:\Documents and Settings\Cronos\Documenti\Progetti\Space Crasher\VS project\Space Crasher\Space Crasher.vcxproj" (destinazioni: build) NON COMPLETATA.
+
+Compilazione NON RIUSCITA.
+
+Tempo trascorso 00:00:00.42
