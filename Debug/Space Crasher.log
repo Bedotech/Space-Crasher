@@ -1,29 +1,22 @@
-﻿Compilazione avviata 11/1/2011 10:46:08 PM.
-     1>Progetto "C:\Documents and Settings\Cronos\Documenti\Progetti\Space Crasher\VS project\Space Crasher\Space Crasher.vcxproj" sul nodo 2 (destinazioni: build).
+﻿Compilazione avviata 02/11/2011 17:16:29.
+     1>Progetto "C:\Users\Cronos\Documents\Progetti\Space-Crasher\Space Crasher.vcxproj" sul nodo 2 (destinazioni: build).
      1>InitializeBuildStatus:
          Creazione di "Debug\Space Crasher.unsuccessfulbuild". È stato specificato "AlwaysCreate".
        ClCompile:
-         d:\Programmi\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt src\main.c
-         main.c
+         Tutti gli output sono aggiornati.
        ResourceCompile:
          Tutti gli output sono aggiornati.
        ManifestResourceCompile:
          Tutti gli output sono aggiornati.
        Link:
-         d:\Programmi\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Documents and Settings\Cronos\Documenti\Progetti\Space Crasher\VS project\Space Crasher\Debug\Space Crasher.exe" /INCREMENTAL /NOLOGO SDLmain.lib SDL.lib SDL_image.lib SDL_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Space Crasher.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Documents and Settings\Cronos\Documenti\Progetti\Space Crasher\VS project\Space Crasher\Debug\Space Crasher.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Documents and Settings\Cronos\Documenti\Progetti\Space Crasher\VS project\Space Crasher\Debug\Space Crasher.lib" /MACHINE:X86 "Debug\Space Crasher.res"
-         "Debug\Space Crasher.exe.embed.manifest.res"
-         Debug\main.obj
+         Tutti gli output sono aggiornati.
        Manifest:
-         C:\Programmi\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\Space Crasher.exe.embed.manifest" /manifest "Debug\Space Crasher.exe.intermediate.manifest"
          Tutti gli output sono aggiornati.
-       LinkEmbedManifest:
-         Tutti gli output sono aggiornati.
-         Space Crasher.vcxproj -> C:\Documents and Settings\Cronos\Documenti\Progetti\Space Crasher\VS project\Space Crasher\Debug\Space Crasher.exe
        FinalizeBuildStatus:
          Eliminazione del file "Debug\Space Crasher.unsuccessfulbuild" in corso.
          Aggiornamento timestamp di "Debug\Space Crasher.lastbuildstate".
-     1>Compilazione progetto "C:\Documents and Settings\Cronos\Documenti\Progetti\Space Crasher\VS project\Space Crasher\Space Crasher.vcxproj" (destinazioni: build) completata.
+     1>Compilazione progetto "C:\Users\Cronos\Documents\Progetti\Space-Crasher\Space Crasher.vcxproj" (destinazioni: build) completata.
 
 Compilazione completata.
 
-Tempo trascorso 00:00:01.12
+Tempo trascorso 00:00:00.10

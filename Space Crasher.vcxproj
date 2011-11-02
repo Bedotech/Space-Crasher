@@ -39,8 +39,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Documents and Settings\Cronos\Documenti\Progetti\Space Crasher\VS project\Space Crasher\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Documents and Settings\Cronos\Documenti\Progetti\Space Crasher\VS project\Space Crasher\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>.\include;$(IncludePath)</IncludePath>
+    <LibraryPath>.\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>

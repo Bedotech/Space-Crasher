@@ -24,7 +24,7 @@
                 //Imposto le dimensioni dello schermo.
                 int width = 800;
                 int height = 800;  
-                /* Set 650x650 16-bits video mode SDL_SWSURFACE |*/
+                /*Set 650x650 16-bits video mode SDL_SWSURFACE |*/
                 screen = SDL_SetVideoMode (width, height, 32, SDL_ANYFORMAT | SDL_HWSURFACE | SDL_DOUBLEBUF);
                 
                 if (screen == NULL)
@@ -58,9 +58,7 @@
                             if( event.type == SDL_QUIT )
                             {                
                                 done = true;
-                            }
-                            
-                            
+                            }                       
                         }
                         /*Check collison.*/
                         if(pioggia->checkCollision(nave->pos)) {

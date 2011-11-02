@@ -14,10 +14,11 @@ class FilaAsteroidi {
         
         
         
-        std::vector<Asteroide> asteroidi; // Tutti gli asteroidi appartenenti alla fila.
+        std::vector<Asteroide*> asteroidi; // Tutti gli asteroidi appartenenti alla fila.
         
         FilaAsteroidi(int velocita, unsigned int densita_fila, int length);
 		~FilaAsteroidi();
+		FilaAsteroidi( const FilaAsteroidi &f );
         void show(SDL_Surface* screen);
         void move();
         
@@ -55,39 +56,55 @@ FilaAsteroidi::FilaAsteroidi(int velocita, unsigned int densita_fila, int length
             while(asteroidi.size() < _densita_fila) {
                 i++;
                 //Assegna all'asteroide la coordinata X in base al valore contenuto in 'posizione'.
-                x = rand()%posizione.size();
-                Asteroide A(posizione[x]);
+                x = rand() % posizione.size();
+                //Asteroide A(posizione[x]);
                 
+				asteroidi.push_back( new Asteroide(posizione[x]) ); 
                 //Elimina l'ultimo elemento richiamato.                
-                posizione.erase(posizione.begin() + x);                
+                posizione.erase(posizione.begin() + x);               
                 
-                asteroidi.push_back(A);            
+                          
             }
                       
 } 
 
 FilaAsteroidi::~FilaAsteroidi () {
-	/*unsigned int i;
+	unsigned int i;
 
-	for(i=0; i< _densita_fila; i++) {
-		delete &asteroidi[i];
-	}*/
+	for(i=0; i< asteroidi.size(); i++) {
+		delete asteroidi[i];
+	}
+}
+
+FilaAsteroidi::FilaAsteroidi( const FilaAsteroidi &f ) {
+	this->_densita_fila = f._densita_fila;
+	this->_length = f._length;
+
+	this->Y = f.Y;
+	this->vel = f.vel;
+
+	int i;
+	for(i=0; i< f._densita_fila; i++) {
+		this->asteroidi.push_back( f.asteroidi[i] );
+	}
 }
 
 void FilaAsteroidi::add(Asteroide A) {
     int i = 0; 
     
-    while(asteroidi[i].pos.x != A.pos.x) i++; 
+    while(asteroidi[i]->pos.x != A.pos.x) i++; 
     
-    if( (i+1) == asteroidi.size() ) asteroidi.push_back(A); 
+    if( (i+1) == asteroidi.size() ) asteroidi.push_back( &A ); 
 }
 
 void FilaAsteroidi::add(int x) {
     int i = 0; 
     
-    while(asteroidi[i].pos.x != x) i++; 
+    while(asteroidi[i]->pos.x != x) i++; 
     
-    if( (i+1) == asteroidi.size() ) { Asteroide A(x); asteroidi.push_back(A); }
+    if( (i+1) == asteroidi.size() ) { 
+		asteroidi.push_back( new Asteroide( x ) ); 
+	}
 }
 
 void FilaAsteroidi::move() {
@@ -98,7 +115,7 @@ void FilaAsteroidi::move() {
     
     for(i=0; i<_densita_fila; i++)
     {       
-        asteroidi[i].pos.y = Y;          
+        asteroidi[i]->pos.y = Y;          
     }
 }
 
@@ -107,7 +124,7 @@ void FilaAsteroidi::show( SDL_Surface *screen ) {
     unsigned int i;    
             
     for(i=0; i<_densita_fila; i++)         
-        asteroidi[i].show(screen);  
+        asteroidi[i]->show(screen);  
 }
 //Trova Collisioni.
 bool FilaAsteroidi::checkCollision(SDL_Rect obj) { 
@@ -115,8 +132,8 @@ bool FilaAsteroidi::checkCollision(SDL_Rect obj) {
      bool collision = false;
      //Per ogni asteroide controlla se vi è collisione.
      for(i = 0; i<asteroidi.size(); i++)  {
-           Asteroide A = asteroidi[i];
-           collision = (obj.x == A.pos.x);
+           Asteroide *A = asteroidi[i];
+           collision = (obj.x == A->pos.x);
            if( collision ) break;
      }
      
