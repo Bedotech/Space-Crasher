@@ -1,17 +1,59 @@
-﻿Compilazione avviata 02/11/2011 17:16:29.
+﻿Compilazione avviata 07/11/2011 21:38:26.
      1>Progetto "C:\Users\Cronos\Documents\Progetti\Space-Crasher\Space Crasher.vcxproj" sul nodo 2 (destinazioni: build).
      1>InitializeBuildStatus:
          Creazione di "Debug\Space Crasher.unsuccessfulbuild". È stato specificato "AlwaysCreate".
        ClCompile:
-         Tutti gli output sono aggiornati.
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Asteroide.cpp Explosion.cpp FilaAsteroidi.cpp GameEngine.cpp Main.cpp Navicella.cpp PioggiaAsteroidi.cpp Player.cpp SurfaceManager.cpp Testo.cpp
+         cl : warning della riga di comando D9030 : '/Gm' non è compatibile con i multiprocessori. L'opzione /MP verrà ignorata.
+         Testo.cpp
+         SurfaceManager.cpp
+         Player.cpp
+         PioggiaAsteroidi.cpp
+     1>c:\users\cronos\documents\progetti\space-crasher\filaasteroidi.cpp(78): warning C4018: '<': errata corrispondenza tra signed e unsigned
+         Navicella.cpp
+         Main.cpp
+     1>c:\users\cronos\documents\progetti\space-crasher\filaasteroidi.cpp(78): warning C4018: '<': errata corrispondenza tra signed e unsigned
+         GameEngine.cpp
+     1>c:\users\cronos\documents\progetti\space-crasher\filaasteroidi.cpp(78): warning C4018: '<': errata corrispondenza tra signed e unsigned
+         FilaAsteroidi.cpp
+     1>c:\users\cronos\documents\progetti\space-crasher\filaasteroidi.cpp(78): warning C4018: '<': errata corrispondenza tra signed e unsigned
+         Explosion.cpp
+         Asteroide.cpp
+         Generazione del codice in corso...
        ResourceCompile:
-         Tutti gli output sono aggiornati.
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Debug\Space Crasher.res" "Space Crasher.rc" 
        ManifestResourceCompile:
-         Tutti gli output sono aggiornati.
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\Space Crasher.exe.embed.manifest.res" "Debug\Space Crasher_manifest.rc" 
        Link:
-         Tutti gli output sono aggiornati.
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Cronos\Documents\Progetti\Space-Crasher\Debug\Space Crasher.exe" /INCREMENTAL /NOLOGO SDLmain.lib SDL.lib SDL_image.lib SDL_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:msvcrt.lib /MANIFEST /ManifestFile:"Debug\Space Crasher.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Cronos\Documents\Progetti\Space-Crasher\Debug\Space Crasher.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Cronos\Documents\Progetti\Space-Crasher\Debug\Space Crasher.lib" /MACHINE:X86 "Debug\Space Crasher.res"
+         "Debug\Space Crasher.exe.embed.manifest.res"
+         Debug\Asteroide.obj
+         Debug\Explosion.obj
+         Debug\FilaAsteroidi.obj
+         Debug\GameEngine.obj
+         Debug\Main.obj
+         Debug\Navicella.obj
+         Debug\PioggiaAsteroidi.obj
+         Debug\Player.obj
+         Debug\SurfaceManager.obj
+         Debug\Testo.obj
        Manifest:
-         Tutti gli output sono aggiornati.
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\Space Crasher.exe.embed.manifest" /manifest "Debug\Space Crasher.exe.intermediate.manifest"
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\Space Crasher.exe.embed.manifest.res" "Debug\Space Crasher_manifest.rc" 
+       LinkEmbedManifest:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Cronos\Documents\Progetti\Space-Crasher\Debug\Space Crasher.exe" /INCREMENTAL /NOLOGO SDLmain.lib SDL.lib SDL_image.lib SDL_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:msvcrt.lib /MANIFEST /ManifestFile:"Debug\Space Crasher.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Cronos\Documents\Progetti\Space-Crasher\Debug\Space Crasher.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Cronos\Documents\Progetti\Space-Crasher\Debug\Space Crasher.lib" /MACHINE:X86 "Debug\Space Crasher.res"
+         "Debug\Space Crasher.exe.embed.manifest.res"
+         Debug\Asteroide.obj
+         Debug\Explosion.obj
+         Debug\FilaAsteroidi.obj
+         Debug\GameEngine.obj
+         Debug\Main.obj
+         Debug\Navicella.obj
+         Debug\PioggiaAsteroidi.obj
+         Debug\Player.obj
+         Debug\SurfaceManager.obj
+         Debug\Testo.obj
+         Space Crasher.vcxproj -> C:\Users\Cronos\Documents\Progetti\Space-Crasher\Debug\Space Crasher.exe
        FinalizeBuildStatus:
          Eliminazione del file "Debug\Space Crasher.unsuccessfulbuild" in corso.
          Aggiornamento timestamp di "Debug\Space Crasher.lastbuildstate".
@@ -19,4 +61,4 @@
 
 Compilazione completata.
 
-Tempo trascorso 00:00:00.10
+Tempo trascorso 00:00:05.45
