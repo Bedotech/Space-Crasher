@@ -1,0 +1,7 @@
+// The config option and settings.
+#define spacecrasher_version_MAJOR @Spacecrasher_VERSION_MAJOR@
+#define spacecrasher_version_MINOR @Spacecrasher_VERSION_MINOR@
+
+//Screen dimension constants
+const int SCREEN_WIDTH = 640;
+const int SCREEN_HEIGHT = 480;
